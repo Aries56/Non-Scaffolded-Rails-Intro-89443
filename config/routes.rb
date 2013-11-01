@@ -14,8 +14,13 @@ NonScaffoldedExample::Application.routes.draw do
   # The URL /contact mpas to the contact action of the info controller.
   
   match 'posts' => 'posts#index', :as => 'posts', :via => :get
+  # the URL /posts maps to the index action of the posts controller
 
-  match 'posts/:id' => 'posts#show', :as => 'post', :via => :get
+  match 'posts/new' => 'posts#new', :as => 'new_post', :via => :get
+
+  match 'posts' => 'posts#create', :as => 'create_post', :via => :post
+
+  match 'posts/:id' => 'posts#show', :as => 'post', :via => :get 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
