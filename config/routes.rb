@@ -1,7 +1,7 @@
 NonScaffoldedExample::Application.routes.draw do
-  
-  get "posts/index"
+  # resources :posts
 
+  get "posts/index"
   get "posts/show"
 
   root :to => 'info#index'
@@ -17,13 +17,12 @@ NonScaffoldedExample::Application.routes.draw do
   # the URL /posts maps to the index action of the posts controller
 
   match 'posts/new' => 'posts#new', :as => 'new_post', :via => :get
-
   match 'posts' => 'posts#create', :as => 'create_post', :via => :post
-
   match 'posts/:id' => 'posts#show', :as => 'post', :via => :get
-
   match 'posts/:id' => 'posts#destroy', :as => 'delete_post', :via => :delete
-  
+  match 'posts/:id/edit' => 'posts#edit', :as => 'edit_post', :via => :get
+  match 'posts/:id' => 'posts#update', :as => 'update_post', :via => :put
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
