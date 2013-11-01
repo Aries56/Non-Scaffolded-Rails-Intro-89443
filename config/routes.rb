@@ -20,8 +20,10 @@ NonScaffoldedExample::Application.routes.draw do
 
   match 'posts' => 'posts#create', :as => 'create_post', :via => :post
 
-  match 'posts/:id' => 'posts#show', :as => 'post', :via => :get 
+  match 'posts/:id' => 'posts#show', :as => 'post', :via => :get
 
+  match 'posts/:id' => 'posts#destroy', :as => 'delete_post', :via => :delete
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
